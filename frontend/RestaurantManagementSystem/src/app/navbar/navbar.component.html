@@ -1,0 +1,21 @@
+<div *ngIf="!isuserloggedin">
+<nz-header class="main-header" nz-row nzType="flex">
+    <div class="it">
+        <a routerLink="/Login"> <img class="logo"  src="../../assets/image.jpg" alt="logo" /> <a class="tr" style="color: white;font-size: 20px; font-weight: bolder; text-align: end; text-align: center;">V6Restaurant</a> </a>
+    </div>
+    <div class="nav-links">
+        <a nz-button class="signupbutton"nzType="link" routerLink="/register" routerLinkActive="active">Sign Up</a> <a nz-button class="loginbutton" nzType="link" routerLink="/login" routerLinkActive="active">Login</a> 
+    </div>
+</nz-header>
+</div>
+
+<div *ngIf="isuserloggedin">
+<nz-header class="main-header" nz-row nzType="flex">
+    <div class="it">
+        <a routerLink="/Login"> <img class="logo"  src="../../assets/image.jpg" alt="logo" /> <a class="tr" style="color: white;font-size: 20px; font-weight: bolder; text-align: end; text-align: center;">V6Restaurant</a> </a>
+    </div>
+    <div class="nav-links">
+        <a nz-button (click)="logut()" class="logoutbutton" nzType="link" routerLink="/login" routerLinkActive="active">logout</a>
+    </div>
+</nz-header>
+</div>

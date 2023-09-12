@@ -1,0 +1,57 @@
+<div class="parent">
+    <nz-layout class="nz-layout">
+      <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+        <div class="logo"></div>
+        <ul nz-menu nzTheme="dark" nzMode="inline">
+          <li nz-submenu nzTitle="User" nzIcon="user">
+            <ul>
+              <li nz-menu-item [routerLink]="['/dashboard/changepassword']" routerLinkActive="active">change password</li>
+            </ul>
+          </li>
+
+          <li nz-menu-item routerLink="/dashboard/details">
+            <span nz-icon  nzType="dashboard"></span>
+            <span>Dashboard</span>
+          </li>
+          <li *ngIf="isadminloggedin" nz-menu-item routerLink="/dashboard/managecategory">
+            <span nz-icon  nzType="appstore"></span>
+            <span>Manage Category</span>
+          </li>
+          <li nz-menu-item routerLink="/dashboard/manageorder">
+            <span nz-icon nzType="shopping"></span>
+            <span>Manage Order</span>
+          </li>
+          <li *ngIf="isadminloggedin" nz-menu-item routerLink="/dashboard/manageproduct">
+            <span nz-icon nzType="reconciliation"></span>
+            <span>Manage Product</span>
+          </li>
+          <li nz-menu-item *ngIf="isadminloggedin" routerLink="/dashboard/managebill">
+            <span nz-icon nzType="account-book"></span>
+            <span>view Bill</span>
+          </li>
+          <li *ngIf="isadminloggedin" routerLink="/dashboard/manageusers" nz-menu-item>
+            <span  nz-icon nzType="usergroup-add"></span>
+            <span>Manage Users</span>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout>
+        <nz-header>
+          <span
+            class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"
+          ></span>
+        </nz-header>
+        <div class="page-content-container">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-layout>
+     
+    
+    </nz-layout>
+    
+   
+  </div>
+  

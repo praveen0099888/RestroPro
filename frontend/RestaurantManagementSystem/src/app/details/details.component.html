@@ -1,0 +1,33 @@
+<div class="details"style="background: #ECECEC;padding:30px;">
+  <div>
+    <h2>Dashboard</h2>
+  </div>
+    <div nz-row [nzGutter]="20">
+      <div nz-col [nzSpan]="8">
+        <nz-card class="cardd" nzHoverable="true" nzTitle="Total Category" >
+          <div>
+            <h1>{{data?.category}}</h1>
+            <p>&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;</p>
+            <button nz-button (click)="handlesubmitforcategory()" routerLinkActive="active" nzType="primary" nzBlock>View Category</button>
+          </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="8">
+        <nz-card nzHoverable="true" nzTitle="Total Product">
+            <h1>{{data?.product}}</h1>
+            <p>&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;</p>
+            <button nz-button (click)="handlesubmitforproduct()" routerLinkActive="active" nzType="primary" nzBlock>View Products</button>
+        </nz-card>
+      </div>
+      <div nz-col [nzSpan]="8">
+        <nz-card nzHoverable="true" nzTitle="Total Bills">
+          <h1>{{data?.bill}}</h1>
+            <p>&nbsp;&nbsp;</p>
+            <p>&nbsp;&nbsp;</p>
+            <button nz-button (click)="handlesubmitforbill()" routerLinkActive="active"  nzType="primary" nzBlock>View Bills</button>
+        </nz-card>
+      </div>
+    </div>
+  </div>
